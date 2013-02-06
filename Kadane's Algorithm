@@ -1,0 +1,32 @@
+//includes and header files
+// This is the implementation of the Kadane's algorithm for finding the maximum contiguous sum in one dimensional array.
+// Algorithm performs better than divide and conquer approach.
+// Complexity is linear.
+
+
+
+
+int Kadane(int array[], int length){
+  int maxSum, maxStartIndex,maxEndIndex;
+  int currentMaxSum = 0;
+  maxSum = min();
+  maxStartIndex = maxEndIndex = 0;
+  int currentStartIndex = 0;
+  for(int currentEndIndex = 0;currentEndIndex<length;currentEndIndex++){
+  currentMaxSum = currentMaxSum + data[currentEndIndex];
+  
+    if(currentMaxSum > maxSum){
+    maxSum = currentMaxSum;
+    maxStartIndex = currentStartIndex;
+    maxEndIndex = currentEndIndex;
+
+    }
+
+    if(currentMaxSum < maxSum){
+    currentMaxSum = 0;
+    currentStartIndex = currentEndIndex + 1;
+    }
+  }
+
+  return maxSum;
+}
