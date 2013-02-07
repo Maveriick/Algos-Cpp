@@ -1,0 +1,19 @@
+//include files and headers
+
+
+void swap(int x, int y){
+  int temp = x;
+  x = y;
+  y = temp;
+}
+
+
+void selectionSort(int data[], int length){
+  for(int i=0,j,least;i<length;i++){
+    for(j = i+1,least = i;j<length;j++){
+      if(data[j]<data[least]){
+        swap(data[j],data[least]);
+      }
+    }
+  }
+}
