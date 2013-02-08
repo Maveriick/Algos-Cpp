@@ -1,0 +1,35 @@
+#include<iostream>
+using namespace std;
+
+
+//preOrder traversal
+
+void preOrder(BSTNode *root){
+  while(root!=NULL){
+    cout<<root->data<<endl;
+    preOrder(root->left);
+    preOrder(root->right);
+  }
+}
+
+
+
+//postOrder traversal 
+
+void postOrder(BSTNode *root){
+  while(root!=NULL){
+  postOrder(root->left);
+  postOrder(root->right);
+  cout<<root->data<<endl;
+  }
+}
+
+
+
+void inOrder(BSTNode* root){
+  while(root!=NULL){
+  postOrder(root->right);
+  cout<<root->data<<endl;
+  postOrder(root->left);
+  }
+}
