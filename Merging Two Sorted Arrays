@@ -1,0 +1,29 @@
+// This algorithm/procedure merges two sorted arrays into a single array/vector.
+// This is not inplace merge. requires additional space
+
+
+vector<int> merge(int arrayOne[],int lengthOne,int arrayTwo[],int lengthTwo){
+vector<int> merged;
+int countOne = 0;
+int countTwo = 0;
+  while(countOne <lengthOne && countTwo < lengthTwo){
+		if(arrayOne[countOne] <= arrayTwo[countTwo]){
+			merged.push_back(arrayOne[countOne]);
+			countOne++;
+		}else{
+			merged.push_back(arrayTwo[countTwo]);
+			countTwo++;
+		}
+	}
+
+	if(countOne>= lengthOne){
+		for(int j=countTwo;j<lengthTwo;j++){
+			merged.push_back(arrayTwo[j]);
+		}
+	}else{
+		for(int j=countOne;j<lengthOne;j++){
+			merged.push_back(arrayOne[j]);
+		}
+	}
+	return merged;
+}
