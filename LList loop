@@ -1,0 +1,23 @@
+// Check if loop exist in llist
+
+bool isLoop(List *head){
+  List *slow;
+  List *fast;
+  
+  slow = head;
+  fast = head;
+  
+  while(true){
+    if(slow == NULL || fast == NULL){
+    return false;
+    }
+
+    if(fast == slow || fast->next == slow){
+    return true;
+    }else{
+    slow = slow->next;
+    fast = fast->next->next;
+    }
+
+  }
+}
