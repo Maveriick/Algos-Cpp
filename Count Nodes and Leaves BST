@@ -1,0 +1,17 @@
+//Count Nodes and Leaves
+
+int Count ( node* root )
+{
+    if ( root == NULL ) return 0;
+    
+    return Count (root->left) + Count (root->right) + 1;
+}
+
+
+int Leaves( node* root )
+{
+    if ( root == NULL ) return 0
+    if ( leaf(root) ) return 1;
+    
+    return Leaves(root->left) + Leaves(root->right);
+}
