@@ -1,0 +1,22 @@
+// function to reverse a linked list by recursion
+
+
+void listReverse(Lise* head){
+  List* head;
+  List* rest;
+
+  if(head == NULL){
+  return;
+  }
+
+  head = head;
+  rest = head->next;
+
+  if(rest == NULL){
+  return;
+  }
+
+  head->next->next = head;
+  head->next = NULL
+  head = rest;
+}
