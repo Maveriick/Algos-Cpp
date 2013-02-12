@@ -1,0 +1,18 @@
+// check if the given tree is BST
+
+bool isBST(BSTNode *root, int min, int max){
+  if(root == NULL){
+  return true;
+  }
+  if(min < root->data && root->data < max){
+    return isBST(root->left, min,root0>data) && isBST(root->right,root->data,max);
+  }else{
+  return false;
+  }
+}
+
+
+bool isBSThelp(BSTNode *root){
+  return isBST(root, INT_MIN, INT_MAX);
+}
+
