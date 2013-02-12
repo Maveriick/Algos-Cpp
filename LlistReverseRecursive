@@ -16,6 +16,8 @@ void listReverse(Lise* head){
   return;
   }
 
+  listReverse(rest);
+
   head->next->next = head;
   head->next = NULL
   head = rest;
