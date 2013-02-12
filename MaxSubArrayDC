@@ -1,0 +1,48 @@
+//maxSubArray divide and conquer
+
+
+
+int maxCrossSum(data,min,mid,max){
+  int maxLeftSum = INT_MIN;
+  int lsum = 0;
+  int maxRightSum = INT_MIN;
+  
+  for(int j=mid;j>=min;j++){
+  sum = sum + data[j];
+    if(sum > maxLeftSum){
+    maxLeftSum = sum;
+    }
+  }
+
+  int rsum = 0;
+  for(int j=mid+1;j<max;j++){
+  rsum = rsum + data[j];
+    if(rsum > maxRightSum){
+    maxRightSum = rsum;
+    }
+
+  }
+  
+return (maxLeftSum + maxRightSum);
+
+}
+
+
+int maxSubArray(int data[],int min, int max){
+  if(low == high){
+  return data[low];
+  }
+
+  int mid = floor((min + max)/2);
+  int leftSum = maxSubArray(data,min,mid);
+  int rightSum = maxSubArray(data,mid+1,max);
+  int crossSum = maxCrossSum(data,min,mid,max);
+
+  if(leftSum>=rightSum && leftSum >= crossSum){
+  return leftSum;
+  }else  if(rightSum>=leftSum && rightSum>=crossSum){
+  return rightSum;
+  }else{
+  return crossSum;
+  }
+}
