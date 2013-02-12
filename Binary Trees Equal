@@ -1,0 +1,9 @@
+int AreEqual( node* root1, node* root2 )
+{
+    if ( root1 == NULL && root2 == NULL ) return 1; //If both are NULL
+    if ( root1 == NULL || root2 == NULL ) return 0; //If either is NULL
+        
+    return  (root1->data == root2->data) &&
+            AreEqual (root1->left, root2->left) &&
+            AreEqual (root1->right, root2->right);
+}
