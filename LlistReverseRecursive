@@ -22,3 +22,34 @@ void listReverse(Lise* head){
   head->next = NULL
   head = rest;
 }
+
+
+
+
+
+
+
+// Reverses the given linked list by changing its .next pointers and
+// its head pointer. Takes a pointer (reference) to the head pointer.
+void Reverse(struct node** headRef) {
+if (*headRef != NULL) { // special case: skip the empty list
+/*
+ Plan for this loop: move three pointers: front, middle, back
+ down the list in order. Middle is the main pointer running
+ down the list. Front leads it and Back trails it.
+ For each step, reverse the middle pointer and then advance all
+ three to get the next node.
+*/
+struct node* middle = *headRef; // the main pointer
+struct node* front = middle->next; // the two other pointers (NULL ok)
+struct node* back = NULL;
+while (1) {
+middle->next = back; // fix the middle node
+if (front == NULL) break; // test if done34
+back = middle; // advance the three pointers
+middle = front;
+front = front->next;
+}
+*headRef = middle; // fix the head pointer to point to the new front
+}
+}
