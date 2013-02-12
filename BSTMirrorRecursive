@@ -1,0 +1,18 @@
+// Mirror image of binary tree
+
+void mirrorImageBST(BSTNode *root){
+  if(root == NULL){
+  return;
+  }
+  else{
+    BSTNode *temp;
+    mirrorImageBST(root->left);
+    mirrorImageBST(root->right);
+    
+    temp = root->left;
+    root->left = root->right;
+    root->right = root->left;
+  }
+}
+
+
