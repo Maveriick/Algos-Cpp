@@ -1,0 +1,17 @@
+//Binary Search
+
+int binarySearch(int data[], int min, int max, int target){
+  	if(max < min){
+			return -1;
+		}
+		else{
+		int mid = min + (max - min)/2;
+			if(data[mid] == target){
+			return mid;
+			}else if(data[mid] > target){
+			binarySearch(data,min,mid-1,target);
+			}else{
+			binarySearch(data, mid+1, target);
+			}
+		}
+	}
