@@ -1,0 +1,11 @@
+//This function returns path in a binary search tree that sums to a particualr number
+
+
+int pathSum(Node* node, int sum){
+  if(node == null){
+    return sum == 0;
+  }else{
+  subsum = sum - node.value;
+    return (pathSum(node->left, subSum) || pathsum(node->right,subSum));
+  }
+}
